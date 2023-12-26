@@ -1,4 +1,4 @@
-package com.hyxiao.algorithm;
+package com.hyxiao.algorithm.fixedwindow;
 
 
 import org.slf4j.Logger;
@@ -44,7 +44,7 @@ public class FixedWindowRateLimiter {
 
         if (counter.intValue() < maxRequestCount) {
             counter.incrementAndGet();
-            logger.info("tryAcquire success");
+            logger.info("tryAcquire success, No.{}", counter.intValue());
             return true;
         } else {
             logger.info("tryAcquire fail");
