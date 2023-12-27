@@ -42,6 +42,7 @@ public class FixedWindowRateLimiter {
             counter = new AtomicInteger(0);
         }
 
+        //  检查当前窗口内的请求数是否小于允许的最大请求数
         if (counter.intValue() < maxRequestCount) {
             counter.incrementAndGet();
             logger.info("tryAcquire success, No.{}", counter.intValue());
